@@ -1,0 +1,163 @@
+ 
+      <! DOCTYPE html >
+      <html>
+        <head>
+          <title>แบบประเมินตนเอง ปีการศึกษา 2566 ภาคเรียนปลาย (สำหรับนิสิตรหัส 60 ถึง 64)</title>
+          <style>
+            table {
+              width: 90%;
+              border-collapse: collapse;
+              font-size: clamp(1rem, 2.5vw, 2rem); /* Font size scales between 1rem and 2rem based on viewport width */
+            }
+            th{
+              background-color: AntiqueWhite;
+            }
+            table, th, td {
+              border: 1px solid black;
+            }
+            th, td {
+              padding: 8px;
+              text-align: left;
+            }
+            a {
+              color: blue;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            h1, h2, a.clicked {
+              color: green;
+              font-weight: bold;
+            }
+            .large-button {
+              width: 50%; /* Set the width to 50% of the container */
+              /* padding: 15px 20px;  Optional: Adjust padding for better size and look */
+              font-size: clamp(1rem, 2.5vw, 2rem); /* Font size scales between 1rem and 2rem based on viewport width */
+              text-align: center; /* Center the text */
+            }
+            input[type="checkbox"] {
+               transform: scale(2); /* Increase the scale as needed */
+                margin: 10px; /* Optional: Add margin for spacing */
+            }
+          </style>
+          <script>
+            function changeText(element) {
+                element.textContent = 'กดแล้ว';
+                element.classList.add('clicked'); 
+            }
+
+            function sUpdate() {
+              innerText = "<table><thead><tr><th width='10%'>รหัสวิชา</th>";
+              innerText = innerText + "<th width='50%' align='left'>ชื่อรายวิชา</th>";
+              innerText = innerText + "<th colspan='2' width='40%'>แบบประเมินตนเอง</th></tr></thead><tbody>";
+              var checkboxes = document.getElementsByName('subjects');
+                checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                  var checkData = JSON.parse(checkbox.value);
+                  innerText = innerText + "<tr><td>" + checkData[0] + "</td>";
+                  innerText = innerText + "<td align='left'>" + checkData[1] + "</td>";
+                  innerText = innerText + "<td><a id='myLink' href= " + checkData[2] +" target='_blank' rel='noopener noreferrer' onclick= 'changeText(this)'>";
+                  innerText = innerText + "ช่วงเริ่มเรียน</a></td>";
+                  innerText = innerText + "<td><a id='myLink2' href= " + checkData[3] + " target='_blank' rel='noopener noreferrer' onclick= 'changeText(this)'>";
+                  innerText = innerText + "หลังเกรดออก</a></td></tr>";
+                }
+              });
+
+
+              innerText = innerText+ "</tbody></table>";
+              y = document.getElementById("sTable");
+		          y.innerHTML = innerText;
+            }
+            window.addEventListener('beforeunload', function(event) {
+              // Cancel the event to prevent the browser from closing immediately
+              event.preventDefault();
+              // Customize the confirmation message
+              event.returnValue = "Will you leave the page?";
+            });
+
+          </script>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+          <h1>แบบประเมินตนเอง ปีการศึกษา 2566 ภาคเรียนปลาย (สำหรับนิสิตรหัส 60 ถึง 64)</h1>
+          <div id="sTable">
+
+          <table>
+          <thead>
+            <tr>
+              <th width="10%">รหัสวิชา</th>
+              <th width="60%" align="left">ชื่อรายวิชา</th>
+              <th width="30%">เลือกรายวิชาที่เรียน</th>
+            </tr>
+          </thead>
+          <tbody><tr><td>           304100 </td>
+              <td align="left"> Essential Math. for CE </td>
+              <td> <input type="checkbox" name="subjects" value='["304100","Essential Math. for CE","https://docs.google.com/forms/d/e/1FAIpQLSdOGahlY6W1zbKD5OedJQfFrD-TK4cHB0qsJLeB30y41lmGJw/viewform","https://docs.google.com/forms/d/e/1FAIpQLSdi_7OAU4eE_4M8bAGwOzsTFXp9jJjhJ2td8ak9sKE6ytqOlw/viewform"]'></td>
+            </tr><tr><td>           304101 </td>
+              <td align="left"> Introduction to CE </td>
+              <td> <input type="checkbox" name="subjects" value='["304101","Introduction to CE","https://docs.google.com/forms/d/e/1FAIpQLScvE7CoEuay73Pq6jzi_becoGChw_HbXen2iN6IOG9eJrjgtQ/viewform","https://docs.google.com/forms/d/e/1FAIpQLScdo6ZLdPqpWSlZzc08TtKiJCiGl-ina83_JB4bMgKMSNbZNw/viewform"]'></td>
+            </tr><tr><td>           304211 </td>
+              <td align="left"> Mechanics of Materials I </td>
+              <td> <input type="checkbox" name="subjects" value='["304211","Mechanics of Materials I","https://docs.google.com/forms/d/e/1FAIpQLScTl9LoW2dD1WO8g9KhyaJbmYbh8BC3kGcZz0Kl44NFajhZWw/viewform","https://docs.google.com/forms/d/e/1FAIpQLScDODBk360dOGkKfEaqe4Wget8dfHa2jL86i_szajgcrC3MNg/viewform"]'></td>
+            </tr><tr><td>           304254 </td>
+              <td align="left"> Geology for Engineers </td>
+              <td> <input type="checkbox" name="subjects" value='["304254","Geology for Engineers","https://docs.google.com/forms/d/e/1FAIpQLSea4TxO5rSOml8Iaapv2JJm5Sm7ZzCaHBO2nIKkeHkzVIIqRw/viewform","https://docs.google.com/forms/d/e/1FAIpQLScl0ymCXBsrHqQf_0tJiKIJjSCZTUtDSgu8iOe8PaccyBJXuQ/viewform"]'></td>
+            </tr><tr><td>           304212 </td>
+              <td align="left"> Structural Analysis I </td>
+              <td> <input type="checkbox" name="subjects" value='["304212","Structural Analysis I","https://docs.google.com/forms/d/e/1FAIpQLSfxMKGgW-_lLs-3cwbIab2FT8nwbel9D3tO91N9B6FZL7b9AA/viewform","https://docs.google.com/forms/d/e/1FAIpQLSfRp72-8jiiqYySSKhG9lhCw0zVvzBLFJHXLUOrptG-thgplw/viewform"]'></td>
+            </tr><tr><td>           304213 </td>
+              <td align="left"> Mechanics of Materials II </td>
+              <td> <input type="checkbox" name="subjects" value='["304213","Mechanics of Materials II","https://docs.google.com/forms/d/e/1FAIpQLSf8qoNvrqKmj7KuxXn8wMvIquttMqpb-O-32lDdWnm7ihaCPA/viewform","https://docs.google.com/forms/d/e/1FAIpQLSffjNe4aoQbLnv4o1czrfOLzT_dD2IvLtULdueShLvScJxQKA/viewform"]'></td>
+            </tr><tr><td>           304221 </td>
+              <td align="left"> CE Materials and Testing Laboratory </td>
+              <td> <input type="checkbox" name="subjects" value='["304221","CE Materials and Testing Laboratory","https://docs.google.com/forms/d/e/1FAIpQLSdyTqD7pXSzCgE6TV-CpDcjWOhzTrNU5VrzlPo7UjyFmcGTig/viewform","https://docs.google.com/forms/d/e/1FAIpQLScmnuBhF0bu7s4CF_sZ4gm4h5uhDoOl5mTn3bufbhNi-JSLhA/viewform"]'></td>
+            </tr><tr><td>           304241 </td>
+              <td align="left"> Fluid Mechanics </td>
+              <td> <input type="checkbox" name="subjects" value='["304241","Fluid Mechanics","https://docs.google.com/forms/d/e/1FAIpQLSek_IL9DqiYhLGVWoVG_uAsOmDeJF9I1Xa4ayUCtsJYa3l0RA/viewform","https://docs.google.com/forms/d/e/1FAIpQLSc5wwLTf1lHyeJv8x5E_ildScB35AcNngq4i7TooxOmR7-wlA/viewform"]'></td>
+            </tr><tr><td>           304242 </td>
+              <td align="left"> Fluid Mechanics Laboratory </td>
+              <td> <input type="checkbox" name="subjects" value='["304242","Fluid Mechanics Laboratory","https://docs.google.com/forms/d/e/1FAIpQLScm8ieUWVYZu4q4F1YdqH3ro6MggKWp1kPLCEgyCLVFhOBUZA/viewform","https://docs.google.com/forms/d/e/1FAIpQLSdkmVoE7O8SOUDXrMq7n1ceqkthtlqwqJdzDDHet43Y5wr60g/viewform"]'></td>
+            </tr><tr><td>           304314 </td>
+              <td align="left"> Structural Analysis II </td>
+              <td> <input type="checkbox" name="subjects" value='["304314","Structural Analysis II","https://docs.google.com/forms/d/e/1FAIpQLSecbwL_oGJOjj4EEX1mSjQdrb1qaRK8ijDeLQJSJK1YLS3IrA/viewform","https://docs.google.com/forms/d/e/1FAIpQLSdKYGZLOFgD0IDtA_Jc5vwUmrFsr3ZcCGy5Xxjbv70nUB4zcw/viewform"]'></td>
+            </tr><tr><td>           304315 </td>
+              <td align="left"> Reinforced Concrete Design </td>
+              <td> <input type="checkbox" name="subjects" value='["304315","Reinforced Concrete Design","https://docs.google.com/forms/d/e/1FAIpQLSfz4z7p1qd1K3Eke8GKI4sqfYZQPXfw8L3q33rDv75NUni-OQ/viewform","https://docs.google.com/forms/d/e/1FAIpQLSdoeI25ry1EGxf0mPTJ4AKWWsQAFkM2Y7KMtlOS1jqbuBMIvg/viewform"]'></td>
+            </tr><tr><td>           304334 </td>
+              <td align="left"> Highway Engineering </td>
+              <td> <input type="checkbox" name="subjects" value='["304334","Highway Engineering","https://docs.google.com/forms/d/e/1FAIpQLSd-c8D-ytQdeRxx-6tVv_c8UiEJC9mj0Mnof_zYu1qJx3o46Q/viewform","https://docs.google.com/forms/d/e/1FAIpQLScJc-QpfPNB0X0CEduACNLb-FlhLmqfuXIL840HHUObwXWJaA/viewform"]'></td>
+            </tr><tr><td>           304335 </td>
+              <td align="left"> Highway Materials Laboratory </td>
+              <td> <input type="checkbox" name="subjects" value='["304335","Highway Materials Laboratory","https://docs.google.com/forms/d/e/1FAIpQLSf9bwKeCgbC_xG6omfE7XVEXzLvQT_0HXO88DVkiBXW_YR9yQ/viewform","https://docs.google.com/forms/d/e/1FAIpQLSd8Y_qPS40851i5cQxlsNXHxVmVCTqYeaT5yXInXw_WSkKlvQ/viewform"]'></td>
+            </tr><tr><td>           304345 </td>
+              <td align="left"> Hydraulic Engineering </td>
+              <td> <input type="checkbox" name="subjects" value='["304345","Hydraulic Engineering","https://docs.google.com/forms/d/e/1FAIpQLSdZFskgGikyH7zbdbCpct6aA2l9mZSIhu-QaJK4QYnsX4H4kw/viewform","https://docs.google.com/forms/d/e/1FAIpQLSco1IRWbRyHkZtIoDK96gCRT2gDD51EmXyRW_7KFKKSN-QOOA/viewform"]'></td>
+            </tr><tr><td>           304353 </td>
+              <td align="left"> Foundation Engineering </td>
+              <td> <input type="checkbox" name="subjects" value='["304353","Foundation Engineering","https://docs.google.com/forms/d/e/1FAIpQLScwdXTP2oIPo0PNPLiD5U94lQwmD6wH7DSNsSAISl7WFL0pcg/viewform","https://docs.google.com/forms/d/e/1FAIpQLSd06d9zL_K-7iG-0-dhGiCJgZNPHK3qk-JuDwQbezltuwI5IA/viewform"]'></td>
+            </tr><tr><td>           304401 </td>
+              <td align="left"> Ethic for Engineers </td>
+              <td> <input type="checkbox" name="subjects" value='["304401","Ethic for Engineers","https://docs.google.com/forms/d/e/1FAIpQLScpfYdXWH14phhTWwE2VR25_a5fxEBk_hVBU106g73XM67shw/viewform","https://docs.google.com/forms/d/e/1FAIpQLScaBWyAUmRiLTxZ-gI-B5-MQ4iNlGibGnw0niKRCAf7iSk_nA/viewform"]'></td>
+            </tr><tr><td>           304427 </td>
+              <td align="left"> Construction Eng. and Management </td>
+              <td> <input type="checkbox" name="subjects" value='["304427","Construction Eng. and Management","https://docs.google.com/forms/d/e/1FAIpQLSfatk2Rp6kdHO_BYsy3Z2cHMYrA-yZN9EQcYHrfxw4cx6ieuA/viewform","https://docs.google.com/forms/d/e/1FAIpQLScDds_OIxolehEvuiRZKa2Qpsk1mD-uQCzJXSr-8yTb2GFxyg/viewform"]'></td>
+            </tr><tr><td>           304496 </td>
+              <td align="left"> Civil Engineering Project </td>
+              <td> <input type="checkbox" name="subjects" value='["304496","Civil Engineering Project","https://docs.google.com/forms/d/e/1FAIpQLSeI-ds_TRZl1FU4p7BeqBmg2B1vw37XsHioHqzoHztQqP2WcQ/viewform","https://docs.google.com/forms/d/e/1FAIpQLSd6RwD_Dnz5ssfCGxkY6yOj0ME0nXjD3cXHaFUFJk3WDlbQWw/viewform"]'></td>
+            </tr><tr><td>           304412 </td>
+              <td align="left"> Finite Element Method in CE </td>
+              <td> <input type="checkbox" name="subjects" value='["304412","Finite Element Method in CE","https://docs.google.com/forms/d/e/1FAIpQLSfNhYDEPfRcRVZhc-ihNk50EVdtjKxP8fLrRdjFFYfzd9L2FQ/viewform","https://docs.google.com/forms/d/e/1FAIpQLSeUE6gC8aZJK2dKZKHRdx0TaMl5CvUfmeZA5EWbZuR-A9tZcA/viewform"]'></td>
+            </tr><tr><td>           304413 </td>
+              <td align="left"> Introduction to Structural Dynamics </td>
+              <td> <input type="checkbox" name="subjects" value='["304413","Introduction to Structural Dynamics","https://docs.google.com/forms/d/e/1FAIpQLSdnvsgTXxygk0tS_krpiWvD0lD72qXV3O5YvIOspwZ0TFdTJA/viewform","https://docs.google.com/forms/d/e/1FAIpQLScMgsmaS-kPkhFuIiqUfFue-kl_XoxZrLR9qHDlAcJU4ISOiA/viewform"]'></td>
+            </tr><tr><td>           304438 </td>
+              <td align="left"> Traffic Engineering </td>
+              <td> <input type="checkbox" name="subjects" value='["304438","Traffic Engineering","https://docs.google.com/forms/d/e/1FAIpQLScpLCjunCNJBepVTzPaNQKfCp_dHrDKLF9w9kW3a8zGr9Qh0g/viewform","https://docs.google.com/forms/d/e/1FAIpQLScU-x61M6-7Ita4iH_my5OQqVi468zaXDcFYdnWaJwZqhNXEQ/viewform"]'></td>
+            </tr>
+          </tbody>
+          </table> 
+          <input type="button" class="large-button" value="ต่อไป" onclick="sUpdate()">
+          <h2> กรุณาเลือกรายวิชาต่างๆ จาก checkbox ที่นิสิตได้เรียนในภาคเรียนดังกล่าวก่อนที่จะกดปุ่ม "ต่อไป"</h2>
+          <h2> แนะนำให้เปิดด้วย browser ที่รองรับการใช้งานมัลติแท๊ป เช่น Chorm, Safari, Firefox, Opera etc.</h2>
+          </div>
+        </body>
+      </html>
